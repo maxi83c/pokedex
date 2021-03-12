@@ -11,6 +11,10 @@
   src: url('../assest/fonts/Pokemon-Solid.ttf');
 }
 
+*, *::after, *::before{
+  box-sizing: border-box;
+}
+
 *, *:focus{
   outline: none;
 }
@@ -20,22 +24,41 @@ body{
 }
 
 .header__title{
-  height: 4rem;
-  margin: 0;
+  height: 110px;
+  width: 500px;
+  margin: 0 auto;
   padding: 0;
-  font-size: 4rem;
-  color: var(--yellow); 
+  font-size: 5rem;
+  line-height: 5rem;
+  color: transparent; 
   font-family: inherit;
   -webkit-text-stroke: 4px var(--blue);
   text-align: center;
-  text-shadow: -4px 5px var(--dark-blue);
   letter-spacing: 3px;
+  background-color: var(--yellow);
+  background-image: url(../assest/images/picachu.gif);
+  background-repeat: no-repeat;
+  background-size: 4rem 4rem;
+  background-position: 0 2rem;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: run 3s linear infinite;
+}
+
+@keyframes run{
+  0%{
+    background-position: 0 2rem;
+  }
+  100%{
+    background-position: 500px 2rem;
+  }
 }
 
 .header__subtitle{
-  height: 2.5rem;
-  margin: 20px 0 0;
+  height: 50px;
+  margin: 0;
   padding: 0;
+  line-height: 40px;
   font-size: 2rem;
   color: white; 
   font-family: inherit;
@@ -141,8 +164,8 @@ body{
 }
 
 .register__button{
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
   padding: 5px;
   border-radius: 50%;
   position: relative;
