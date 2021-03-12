@@ -1,0 +1,135 @@
+
+@font-face {
+  font-family: 'pokemon-solid';
+  src: url('../assest/fonts/Pokemon-Solid.ttf');
+}
+
+
+*, *:focus{
+  outline: none;
+}
+
+body{
+  font-family: 'pokemon-solid', sans-serif;
+}
+
+.pokedex{
+  position: relative;
+  width: 500px;
+  height: 700px;
+}
+
+.image{
+  max-width: 100%;
+}
+
+.pokedex__glass, .pokedex__up, .pokedex__down{
+  position: absolute;
+  left: 0;
+}
+
+.pokedex__glass{
+  width: 500px;
+  height: 300px;
+  top: 100px;
+  opacity: .8;
+  transition: transform .6s;
+}
+
+.pokedex__glass .image{
+  width: 100%;
+  height: 100%;
+}
+
+.pokedex--open .pokedex__glass{
+  transform: scaleY(1.5) translateY(80px);
+  transition: transform .6s .58s;
+}
+
+.pokedex__up{
+  width: 500px;
+  height: 300px;
+  top: 0;
+}
+
+.pokedex__down{
+  width: 500px;
+  height: 300px;
+  top: 238px;
+  transition: transform .6s;
+}
+
+.pokedex--open .pokedex__down{
+  transform: translateY(120px);
+  transition: transform .6s .58s;
+}
+
+.pokedex__ball{
+  border-radius: 50%;
+  position: absolute;
+  left: 175px;
+  top: 218px;
+  width: 125px;
+  height: 138px;
+  transition: transform .6s .58s;
+  opacity: .7;
+}
+
+.pokedex--open .pokedex__ball{
+  transform: scale(0) rotate(1turn);
+  transition: transform .6s;
+}
+
+.register{
+  position: absolute;
+  width: 60%;
+  margin: 80px auto;
+  top: 200px;
+  left: 100px;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity .6s 0, transform .6s .59s;
+}
+
+.pokedex--open .register{
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity .6s .59s, transform .6s .59s;
+}
+
+.register__name{
+  width: 100%;
+  background-color: transparent;
+  border: 3px solid #a1cfcc;
+  color: #a1cfcc;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.register__button{
+  width: 90px;
+  height: 90px;
+  padding: 5px;
+  border-radius: 50%;
+  position: relative;
+  top: 20px;
+  left: 31%;
+  background-color: transparent;
+  background-image: linear-gradient(0deg, rgba(255,0,0,.5) 45%, rgba(0,0,0,.5) 45%, rgba(0,0,0,.5) 55%, rgba(255,255,255,.5) 55%);
+  font-size: 3rem;
+  color: #FFCC03; 
+  font-family: inherit;
+  -webkit-text-stroke: 2px #386ABB;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  line-height: 3.8rem;
+  box-shadow: 0 5px 5px rgba(0,0,0,.5);
+  transition: transform .5s;
+}
+
+.register__button:active{
+  transform: rotate(-1turn);
+}
