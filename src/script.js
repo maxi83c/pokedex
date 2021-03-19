@@ -52,6 +52,7 @@ register.addEventListener('submit', async (e) => {
     userName = registerName.value
     playContainer.classList.add('play--loading')
     const insidePokedex = await checkPokedex()
+
     registerName.value = ''
     register.classList.remove('register--error')
     pokedex.classList.remove('pokedex--open')
