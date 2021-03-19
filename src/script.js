@@ -113,7 +113,7 @@ const getAnswers = async (answers = 4) => {
     while (options.length < answers) {
       const index = getRandomNumber()
       const newAnswer = {name: allPokemonNames[index], id: index + 1}
-      if (!options.includes(newAnswer)) {
+      if (!options.includes(selectedPokemon => ponewAnswer.name === selectedPokemon.name)) {
         options.push(newAnswer)
       }
     }

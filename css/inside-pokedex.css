@@ -45,6 +45,7 @@
   color: var(--dark-blue);
   font-size: 1rem;
   margin-top: 10px;
+  -webkit-text-stroke: 1px var(--blue);
   text-align: center;
   font-weight: bold;
   opacity: .5;
@@ -68,6 +69,7 @@
   background-color: red;
   color: var(--yellow);
   border-radius: 5px;
+  -webkit-text-stroke: 0px;
 }
 .controls__button:nth-child(3){
   border-radius: 3px 15px 15px 3px;
