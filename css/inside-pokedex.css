@@ -1,0 +1,210 @@
+/* use Pokedex */
+
+.play{
+  width: 100vw;
+  height: 100vh;
+  min-height: 560px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  background-image: url(../assets/images/pokedex-up.png), url(../assets/images/pokedex-down.png), url(../assets/images/pokedex-glass.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto, 100% auto, 100vw max(100vh, 700px);
+  background-position: 0 -52vw, 0 max(95vh, 550px), 0 0;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 600px){
+  .play{
+    background-size: 100% auto, 100% auto, 100vw max(100vh, 700px);
+    background-position: 0 -52vw, 0 max(95vh, 650px), 0 0;
+    min-height: 700px;
+  }
+}
+
+.play--show{
+  display: block;
+}
+
+/*  Pokedex control buttons */
+
+.controls{
+  position: absolute;
+  top: 3vw;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.controls__button{
+  width: 39vw;
+  height: 30px;
+  border: 1px solid var(--green);
+  background-color: var(--green);
+  color: var(--dark-blue);
+  font-size: 1rem;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+  opacity: .5;
+  box-shadow: 0 10px 10px var(--green);
+  background-image: linear-gradient(transparent 20%, rgba(0,0,0,0.2)  60%);
+}
+
+.controls__button:active{
+  transform: scale(.99);
+  color: var(--dark-blue);
+  border-color: var(--yellow);
+}
+
+.controls__button:first-child{
+  border-radius: 15px 3px 3px 15px;
+  
+}
+
+.controls__button:nth-child(2){
+  width: 30px;
+  background-color: red;
+  color: var(--yellow);
+  border-radius: 5px;
+}
+.controls__button:nth-child(3){
+  border-radius: 3px 15px 15px 3px;
+}
+
+.play__title-container{
+  width: 78vw;
+  height: 3rem;
+  position: relative;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 600px){
+  .play__title-container{
+    top: 90px;
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .play__title-container{
+    top: 120px;
+  }
+}
+
+/*  Title in pokedex  */
+
+.play__title{
+  position: absolute;
+  height: 2rem;
+  line-height: 2rem;
+  width: 100%;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  color: var(--yellow);
+  font-size: 1rem;
+  letter-spacing: 3px;
+  -webkit-text-stroke: 1px var(--blue);
+  transition: transform .6s;
+  opacity: .6;
+}
+
+.play__title:first-child{
+  transform: translateX(0);
+}
+
+.play__title:last-child{
+  transform: translateX(100%);
+}
+
+.play__title-container--next > .play__title:first-child{
+  transform: translateX(-100%);
+}
+
+.play__title-container--next >  .play__title:last-child{
+  transform: translateX(0);
+}
+
+@media screen and (min-width: 600px){
+  .play__title{
+    font-size: 2rem;
+    -webkit-text-stroke: 2px var(--blue);
+  }
+}
+
+.play__container{
+  width: 100%;
+  min-height: max(100vh, 560px);
+  position: relative;
+  top: max(1vw, 20px);
+  opacity: .6;
+}
+
+@media screen and (min-width: 600px){
+  .play__container{
+    top: max(4vw, 80px);
+  }
+}
+
+.content{
+  width: 78vw;
+  height: 70vh;
+  min-height: 500px;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%) scaleX(1);
+}
+
+.play--loading > .content {
+  transform: translateX(-50%) scaleX(0);
+}
+
+.play--modal > .content {
+  transform: translateX(-50%) scaleX(0);
+}
+
+
+.content > .content__game{
+  transform: translateX(0);
+}
+
+.content > .content__viewer{
+  transform: translateX(200%);
+}
+
+.content--next > .content__game{
+  transform: translateX(-200%);
+}
+
+.content--next > .content__viewer{
+  transform: translateX(0);
+}
+
+.content__game, .content__viewer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform .6s;
+  width: 100%;
+  
+}
+.content__game{
+  height: 100%;
+}
+
+.content__viewer{
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  max-height: 95%;
+}

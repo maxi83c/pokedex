@@ -1,0 +1,276 @@
+
+:root{
+  --yellow: #ffcc03;
+  --blue: #386abb;
+  --dark-blue: #1e3b71;
+  --green: #a1cfcc;
+  --dark-red: #4d110b;
+
+  /* text-wave animation*/
+  --delay: 0;
+  --speed: 1s;
+  --max-top: 8px;
+  --max-bottom: -8px;
+}
+
+@font-face {
+  font-family: 'pokemon-solid';
+  src: url('../assets/fonts/Pokemon-Solid.ttf');
+}
+
+*, *::after, *::before{
+  box-sizing: border-box;
+}
+
+*, *:focus{
+  outline: none;
+}
+
+body{
+  font-family: 'pokemon-solid', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  user-select: none;
+}
+
+.main{
+  position: relative;
+}
+
+.header--hide{ 
+  display: none;
+}
+
+.header__title{
+  height: 80px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 3.5rem;
+  line-height: 4rem;
+  color: transparent; 
+  font-family: inherit;
+  -webkit-text-stroke: 2px var(--blue);
+  text-align: center;
+  letter-spacing: 3px;
+  background-color: var(--yellow);
+  background-image: url(../assets/images/picachu.gif);
+  background-repeat: no-repeat;
+  background-size: 2.5rem 2.5rem;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: run 3s linear infinite;
+  
+}
+
+@keyframes run{
+  0%{
+    background-position: 0 var(--run-bottom, 2rem);
+  }
+  100%{
+    background-position: 130% var(--run-bottom, 2rem);
+  }
+}
+
+.header__subtitle{
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  line-height: 40px;
+  font-size: 1.5rem;
+  color: white; 
+  font-family: inherit;
+  -webkit-text-stroke: 2px var(--blue);
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+@media screen and (min-width: 480px){
+  .header__title{
+    height: 110px;
+    width: 500px;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 5rem;
+    line-height: 5rem;
+    background-size: 4rem 4rem;
+    -webkit-text-stroke: 4px var(--blue);
+  }
+
+  .header__subtitle{
+    font-size: 2rem;
+    -webkit-text-stroke: 3px var(--blue);
+  }
+}
+
+.pokedex{
+  position: relative;
+  width: 100%;
+  min-width: 360px;
+  max-width: 374px;
+  min-height: 400px;
+  margin: 0 auto;
+}
+
+.pokedex--hide{ 
+  transform: scale(0);
+}
+
+.image{
+  max-width: 100%;
+}
+
+.pokedex__glass, .pokedex__up, .pokedex__down{
+  position: absolute;
+  left: 0;
+}
+
+.pokedex__glass{
+  width: 100%;
+  height: 300px;
+  top: 30%;
+  opacity: .8;
+  transition: transform .6s;
+}
+
+.pokedex__glass .image{
+  width: 100%;
+  height: 100%;
+}
+
+.pokedex__up{
+  width: 100%;
+  height: 300px;
+  top: 0;
+}
+
+.pokedex__down{
+  width: 100%;
+  height: 300px;
+  top: 238px;
+  transition: transform .6s;
+}
+
+.pokedex__up .image, .pokedex__down .image{
+  max-height: 300px;
+}
+
+.pokedex--open .pokedex__down{
+  transform: translateY(120px);
+  transition: transform .6s .58s;
+}
+
+.pokedex__ball{
+  border-radius: 50%;
+  position: absolute;
+  left: calc(50% - 80px);
+  top: 150px;
+  width: 125px;
+  height: 138px;
+  transition: transform .6s .58s;
+  opacity: .7;
+}
+
+@media screen and (min-width: 370px){
+  .pokedex__ball{
+    top: 155px;
+  }
+}
+
+.pokedex--open .pokedex__ball{
+  transform: scale(0) rotate(1turn);
+  transition: transform .6s;
+}
+
+.register{
+  width: 80%;
+  position: absolute;
+  top: 220px;
+  left: 38px;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity .6s 0, transform .6s .59s;
+}
+
+.pokedex--open .register{
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity .6s .59s, transform .6s .59s;
+}
+
+.register__name{
+  width: 100%;
+  background-color: transparent;
+  border: 3px solid var(--green);
+  color: var(--green);
+  padding: 10px 10px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 1.8rem;
+  box-shadow: 0 6px 10px 2px var(--green), inset 1px 1px 6px var(--green),  inset -1px -1px 6px var(--green);
+}
+
+.register__name::placeholder{
+  text-align: center;
+  color: var(--green);
+  opacity: .5;
+}
+
+.register--error .register__name{
+  border: 3px solid red;
+  box-shadow: 0 6px 10px 2px red, inset 1px 1px 6px red,  inset -1px -1px 6px red;
+}
+
+.register--error::after{
+  content: "Username must be alphanumeric between 1 and 10 characters";
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  font-family: sans-serif;
+  font-size: 0.55rem;
+  text-align: center;
+}
+
+.register__button{
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border-radius: 50%;
+  position: relative;
+  top: 20px;
+  left: 27.5%;
+  background-color: transparent;
+  background-image: linear-gradient(0deg, rgba(255,255,255,.5) 45%, rgba(0,0,0,.5) 45%, rgba(0,0,0,.5) 55%,rgba(255,0,0,.5) 55%);
+  font-size: 3rem;
+  color: var(--yellow); 
+  font-family: inherit;
+  -webkit-text-stroke: 2px var(--blue);
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  line-height: 3.8rem;
+  box-shadow: 0 10px 10px var(--green);
+  transition: transform .5s;
+  opacity: .6;
+}
+
+.register__button:active{
+  transform: rotate(-1turn);
+}
+
+.footer{
+  position: absolute;
+  right: 10px;
+  bottom: 2px;
+  color: var(--yellow); 
+  font-family: inherit;
+  -webkit-text-stroke: 1px var(--blue);
+  letter-spacing: 2px;
+}
+
+.footer a, .footer a:visited{
+  color: var(--blue); 
+  -webkit-text-stroke: 1px var(--yellow); 
+}

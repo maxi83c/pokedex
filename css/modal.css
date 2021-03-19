@@ -1,0 +1,140 @@
+.play--modal > .play__modal{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.2);
+}
+
+.modal{
+  width: 90vw;
+  height: 90vh;
+  margin: 5vh auto;
+  border-radius: 12px;
+  border: 2px solid var(--dark-blue);
+  box-shadow: inset 10px 10px 10px var(--dark-blue),  inset -10px -10px 10px var(--dark-blue);
+  position: relative;
+  background-image: linear-gradient(transparent 30%, rgba(0,0,0,0.3)  60%);
+  overflow: auto;
+}
+
+.modal__close{
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--blue);
+  border-radius: 6px;
+  background-color: rgba(255,0,0,.5);
+  color: white;
+  font-size: 1rem;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 10px 10px  rgba(0,0,0,0.2) ;
+  background-image: linear-gradient(transparent 20%, rgba(0,0,0,0.2)  60%);
+}
+
+.modal__image{
+  width: 80%;
+  margin: 60px auto;
+}
+
+.modal__image img {
+  min-height: 120px;
+  max-height: 220px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.modal__description{
+  height: 20px;
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+  top: -5px;
+  left: 5px;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  -webkit-text-stroke: 1px var(--blue);
+  color: var(--green);
+  text-transform: capitalize;
+}
+
+@media screen and (min-width: 600px){
+  .modal__description{
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 800px){
+  .modal__description{
+    font-size: 3rem;
+  }
+}
+
+.list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+
+
+
+.list__item{
+  margin: 15px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--dark-blue);
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image:  linear-gradient(transparent 20%, rgba(0,0,0,0.2)  60%);
+}
+
+@media screen and (min-width: 600px){
+  .list__item{
+    margin: 20px;
+    height: 100px;
+    width: 100px;
+  }
+}
+
+.list__item img{
+  max-width: 70%;
+}
+
+.list__item::after{
+  content: attr(data-type);
+  width: 60px;
+  height: 10px;
+  text-align: center;
+  position: absolute;
+  bottom: -5px;
+  left: 25px;
+  transform: translateX(-50%);
+  text-transform: capitalize;
+  letter-spacing: 3px;
+  -webkit-text-stroke: 1px var(--blue);
+  color: var(--green);
+  text-transform: capitalize;
+  font-size: 0.7rem;
+}
+
+@media screen and (min-width: 600px){
+  .list__item::after{
+    width: 100px;
+    height: 10px;
+    left: 50px;
+    font-size: 1rem;
+  }
+}

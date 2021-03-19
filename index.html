@@ -2,26 +2,71 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Pokedex</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="16x16">
+  <link rel="stylesheet" href="css/initial-pokedex.css">
+  <link rel="stylesheet" href="css/inside-pokedex.css">
+  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="css/types.css">
+  <link rel="stylesheet" href="css/viewer.css">
+  <link rel="stylesheet" href="css/loading.css">
+  <link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
-  <header class="header">
+  <header class="header" id="header">
     <h1 class="header__title">Pokémon</h1>
     <h2 class="header__subtitle">Gotta catch'em all!</h2>
   </header>
-  <main class="pokedex" id="pokedex">
-    <div class="pokedex__glass"><img src="assest/images/pokedex-glass.png" alt="glass" class="image">
-    </div>
-    <div class="pokedex__up"><img src="assest/images/pokedex-up.png" alt="pokedex up" class="image"></div>
-    <div class="pokedex__down"><img src="assest/images/pokedex-down.png" alt="pokedex down" class="image"></div>
-    <div class="pokedex__ball" id="ball"><img src="assest/images/pokedex-ball.png" alt="ball" class="image"></div>
-    <form class="register">
-      <input type="text" placeholder="What's your name?" class="register__name">
-      <button type="button" id="button-go" class="register__button">Go!</button>
-    </form>
+  <main class="main">
+    <section class="pokedex" id="pokedex">
+      <div class="pokedex__glass"><img src="assets/images/pokedex-glass.png" alt="glass" class="image">
+      </div>
+      <div class="pokedex__up"><img src="assets/images/pokedex-up.png" alt="pokedex up" class="image"></div>
+      <div class="pokedex__down"><img src="assets/images/pokedex-down.png" alt="pokedex down" class="image"></div>
+      <div class="pokedex__ball" id="ball"><img src="assets/images/pokedex-ball.png" alt="ball" class="image"></div>
+      <form class="register" id="register">
+        <input type="text" placeholder="What's your name?" minlength="1" maxlength="10" class="register__name" id="register-name">
+        <button class="register__button">Go!</button>
+      </form>
+   </section>
+    <section class="play" id="play-section">
+      <form class="controls" id="controls">
+        <button type="button" class="controls__button prev">&lt;</button>
+        <button type="button" class="controls__button exit">X</button>
+        <button type="button" class="controls__button next">&gt;</button>
+      </form>
+      <div class="play__title-container" id="title-container">
+        <h2 class="play__title">Who's That Pokémon?</h2>
+        <h2 class="play__title">Pokedex</h2>
+      </div>
+      <div class="play__container" id="play-container">
+        <div class="content" id="content-section">
+          <div class="content__game" id="game">
+            <div class="image-container" id="poke-image-container">
+              <img src="" alt="Pokemon" id="who-is">
+            </div>
+            <form class="questions" id="questions">
+              <button type="button" class="questions__button"></button>
+              <button type="button" class="questions__button"></button>
+              <button type="button" class="questions__button"></button>
+              <button type="button" class="questions__button"></button>
+            </form>
+          </div>
+          <div class="content__viewer" id="viewer"></div>
+        </div>
+        <div class="loading" id="loading">
+          <h2 class="loading__title">
+            <span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span><span>.</span><span>.</span><span>.</span>
+          </h2>
+        </div>
+      </div>
+      <form class="play__modal" id="modal"></form>
+    </section>
   </main>
+  <footer class="footer">
+    Coded by <a href="https://github.com/maxi83c" target="_blank">maxi83c</a>
+  </footer>
   <script src="src/script.js"></script>
 </body>
 </html>

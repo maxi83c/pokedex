@@ -1,0 +1,117 @@
+.loading{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  transform: scaleX(0);
+  transition: transform 0.6s;
+}
+
+.play--loading > .loading {
+  transform: scaleX(1);
+}
+
+.loading__title{
+  height: 150px;
+  width: 300px;
+  text-align: center;
+  padding: 0;
+  font-size: 4rem;
+  line-height: 6.5rem;
+  color: transparent; 
+  font-family: inherit;
+  -webkit-text-stroke: 4px var(--blue);
+  text-align: center;
+  letter-spacing: 3px;
+  background-color: var(--yellow);
+  background-image: url(../assets/images/picachu.gif);
+  background-repeat: no-repeat;
+  background-size: 3.5rem 3.5rem;
+  background-position: 0 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  --run-bottom: 2.8rem;
+  animation: run 3s linear infinite;
+  position: absolute;
+  top: 0;
+}
+
+.loading__title span{
+  display: inline-block;
+  animation: text-wave var(--speed) infinite var(--delay) linear;
+}
+
+.loading__title span:nth-child(1){
+  animation: text-wave var(--speed) infinite linear;
+}
+.loading__title span:nth-child(2){
+   --delay: .2s;
+}
+.loading__title span:nth-child(3){
+  --delay: .4s;
+}
+.loading__title span:nth-child(4){
+  --delay: .6s;
+}
+.loading__title span:nth-child(5){
+  --delay: .8s;
+}
+.loading__title span:nth-child(6){
+  --delay: 1s;
+}
+.loading__title span:nth-child(7){
+  --delay: 1.2s;
+}
+.loading__title span:nth-child(8){
+  --delay: 1.4s;
+}
+.loading__title span:nth-child(9){
+  --delay: 1.6s;
+} 
+.loading__title span:nth-child(10){
+  --delay: 1.8s;
+}
+
+@keyframes text-wave{
+  0%{
+      transform: translateY(0);
+  }
+ 25%{
+      transform: translateY(var(--max-top));
+  }
+  50%{
+      transform: translateY(0);
+  }
+ 75%{
+      transform: translateY(var(--max-bottom));
+  }
+  100%{
+      transform: translateY(0);
+  }
+} 
+
+.loading__title::before{
+  content: "";
+  width: 150px;
+  height: 150px;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-image: radial-gradient(circle, white 30%, black 30%, black 60%, transparent 60%),
+  linear-gradient(red 47%, black 47%, black 53%, white 53%);
+  background-size: 45px 45px, cover;
+  background-position: center;
+  position: absolute;
+  background-repeat: no-repeat;
+  bottom: -125px;
+  left: calc(50% - 75px);
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate{
+  100%{
+    transform: rotate(1turn);
+  }
+}

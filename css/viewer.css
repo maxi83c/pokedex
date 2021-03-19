@@ -1,0 +1,97 @@
+.card{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border: 3px solid var(--green);
+  color: var(--green);
+  padding: 10px 10px;
+  margin: 10px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 1.8rem;
+  overflow: hidden;
+  box-shadow: 0 6px 10px 2px var(--green), inset 1px 1px 6px var(--green),  inset -1px -1px 6px var(--green);
+}
+
+@media screen and (min-width: 600px){
+  .card{
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.card__id{
+  width: 100%;
+  position: absolute;
+  height: 20px;
+  line-height: 0;
+  top: -5px;
+  left: 5px;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  -webkit-text-stroke: 1px var(--blue);
+  z-index: 1;
+}
+
+.card__image{
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  border-radius: 50%;
+  border: 1px solid var(--green);
+  background-image: linear-gradient(transparent 48.5%, var(--green) 48.5%, var(--green) 52.5%, rgba(0,0,0,.1) 52.5%);
+}
+
+.card__image::after{
+  content: "?";
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-family: Courier;
+  font-weight: bold;
+  font-size: 4rem;
+  letter-spacing: 3px;
+  color: var(--green);
+  -webkit-text-stroke: 1px var(--blue);
+  position: absolute;
+  top: 0;
+  left: 15px;
+}
+
+@media screen and (min-width: 600px){
+  .card__image{
+    width: 170px;
+    height: 170px;
+    border: 3px solid var(--green);
+  }
+
+  .card__image::after{
+    width: 80px;
+    height: 80px;
+    font-size: 10rem;
+    top: 5px;
+    left: 35px;
+  }
+}
+
+.card__image--catched{
+  border-radius: 0;
+  border: none;
+  background-image: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: radial-gradient(rgba(255,255,255,0.5) 40%, transparent 75%);
+}
+
+.card__image--catched::after{
+  display: none;
+}
+
+.card__image--catched > .card__catched{
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
