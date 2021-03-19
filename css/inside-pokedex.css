@@ -41,11 +41,11 @@
   width: 39vw;
   height: 30px;
   border: 1px solid var(--green);
-  background-color: var(--green);
-  color: var(--dark-blue);
+  background-color: var(--dark-blue);
+  color: var(--yellow);
   font-size: 1rem;
   margin-top: 10px;
-  -webkit-text-stroke: 1px var(--blue);
+  -webkit-text-stroke: 1px var(--yellow);
   text-align: center;
   font-weight: bold;
   opacity: .5;
@@ -55,7 +55,9 @@
 
 .controls__button:active{
   transform: scale(.99);
-  color: var(--dark-blue);
+  color: var(--green);
+  background-color: var(--blue);
+  -webkit-text-stroke: 1px var(--green);  
   border-color: var(--yellow);
 }
 
