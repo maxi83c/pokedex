@@ -147,7 +147,6 @@ const checkPokedex = () => {
         }))
         localStorage.setItem(`pokedex-${userName}`, JSON.stringify(localPokedex))
         setRemainingPokemons()
-        playContainer.classList.remove('play--loading')
         return true
       }).catch(e => {
         console.log(e)
