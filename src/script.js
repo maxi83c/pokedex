@@ -46,13 +46,12 @@ ball.addEventListener('click', () => {
 })
 
 // on submit user name
-register.addEventListener('submit', async (e) => {
+register.addEventListener('submit',  (e) => {
   e.preventDefault()
   if (validateUser()) {
     userName = registerName.value
     playContainer.classList.add('play--loading')
-    const insidePokedex = await checkPokedex()
-
+    checkPokedex()
     registerName.value = ''
     register.classList.remove('register--error')
     pokedex.classList.remove('pokedex--open')
@@ -106,7 +105,7 @@ const validateUser = () => {
 const getRandomNumber = (max = 386) => Math.floor(Math.random() * max)
 
 // get 4 pokemons to play
-const getAnswers = async (answers = 4) => {
+const getAnswers = (answers = 4) => {
   const options = []
   const currentPokemon = remaining[getRandomNumber(remaining.length)]
   if (currentPokemon !== undefined) {
@@ -120,7 +119,7 @@ const getAnswers = async (answers = 4) => {
     }
     correctPokemon = options[0]
     const allAnswers = options.sort(() => Math.random() - 0.5)
-    await writeGame(allAnswers)
+    writeGame(allAnswers)
   } else {
     getAnswers()
   }
@@ -250,7 +249,7 @@ const writeGame = answers => {
         console.log(e)
         playContainer.classList.remove('play--loading')
         playModalError(e)
-      })
+      })  
 }
 
 const playModalError = (error) => {

@@ -46,11 +46,13 @@
   font-size: 1rem;
   margin-top: 10px;
   -webkit-text-stroke: 1px var(--yellow);
+  font-family: sans-serif;
   text-align: center;
-  font-weight: bold;
+  font-weight: 800;
   opacity: .5;
   box-shadow: 0 10px 10px var(--green);
   background-image: linear-gradient(transparent 20%, rgba(0,0,0,0.2)  60%);
+  cursor: pointer;
 }
 
 .controls__button:active{
@@ -198,8 +200,8 @@
   left: 0;
   transition: transform .6s;
   width: 100%;
-  
 }
+
 .content__game{
   height: 100%;
 }

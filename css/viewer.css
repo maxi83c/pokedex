@@ -13,6 +13,10 @@
   box-shadow: 0 6px 10px 2px var(--green), inset 1px 1px 6px var(--green),  inset -1px -1px 6px var(--green);
 }
 
+.card[data-id] {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 600px){
   .card{
     width: 200px;

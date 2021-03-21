@@ -28,6 +28,7 @@
 
 body{
   font-family: 'pokemon-solid', sans-serif;
+  letter-spacing: 3px;
   min-height: 100vh;
   margin: 0;
   user-select: none;
@@ -169,6 +170,7 @@ body{
   height: 138px;
   transition: transform .6s .58s;
   opacity: .7;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 370px){
@@ -200,20 +202,22 @@ body{
 
 .register__name{
   width: 100%;
+  height: 61px;
   background-color: transparent;
   border: 3px solid var(--green);
-  color: var(--green);
-  padding: 10px 10px;
+  color: var(--blue);
+  opacity: .7;
+  padding: 5px 10px 15px;
   border-radius: 8px;
   text-align: left;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   box-shadow: 0 6px 10px 2px var(--green), inset 1px 1px 6px var(--green),  inset -1px -1px 6px var(--green);
 }
 
 .register__name::placeholder{
   text-align: center;
   color: var(--green);
-  opacity: .5;
+  opacity: 1;
 }
 
 .register--error .register__name{
@@ -247,6 +251,7 @@ body{
   color: var(--yellow); 
   font-family: inherit;
   -webkit-text-stroke: 2px var(--blue);
+  letter-spacing: 3px;
   display: flex;
   justify-content: center;
   justify-items: center;

@@ -165,6 +165,7 @@
   justify-content: center;
   align-items: flex-start;
   background-image: linear-gradient(transparent 20%, rgba(0,0,0,0.2)  60%);
+  cursor: pointer;
 }
 
 .questions__button:active{
