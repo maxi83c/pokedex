@@ -11,7 +11,7 @@
   background-position: center;
   background-size: max(80vw, 80vh) max(80vw, 80vh);
   border-radius: 15px;
-  box-shadow: 0 6px 10px 2px var(--dark-red), inset 3px 3px 10px var(--dark-red),  inset -3px -3px 10px var(--dark-red);
+  box-shadow: 0 8px 6px -4px var(--dark-red), inset 3px 3px 10px var(--dark-red),  inset -3px -3px 10px var(--dark-red);
   position: relative;
   overflow: hidden;
 }
@@ -117,8 +117,8 @@
 }
 
 .image-container img {
-  max-height: 100%;
-  max-width: 100%;
+  max-height: 90%;
+  max-width: 90%;
   filter: brightness(0);
 }
 

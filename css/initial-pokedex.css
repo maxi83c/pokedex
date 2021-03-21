@@ -29,7 +29,7 @@
 body{
   font-family: 'pokemon-solid', sans-serif;
   letter-spacing: 3px;
-  min-height: 100vh;
+  min-height: max(100vh, 740px);
   margin: 0;
   user-select: none;
 }
@@ -266,7 +266,7 @@ body{
 }
 
 .footer{
-  position: absolute;
+  position: fixed;
   right: 10px;
   bottom: 2px;
   color: var(--yellow); 
