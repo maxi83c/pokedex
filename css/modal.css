@@ -37,6 +37,14 @@
   background-image: linear-gradient(transparent 20%, rgba(0,0,0,0.2)  60%);
 }
 
+.modal__error{
+  width: 90%;
+  height: 80%;
+  margin: 15% 5% 5%;
+  font-family: sans-serif;
+  color: red;
+}
+
 .modal__image{
   width: 80%;
   margin: 60px auto;

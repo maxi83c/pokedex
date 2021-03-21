@@ -86,6 +86,7 @@ const slidePrev = () => {
   content.classList.remove('content--next')
 }
 
+// control listener
 controls.addEventListener('click', e => {
   if (e.target.classList.contains('exit'))
     closePokedex()
@@ -145,6 +146,7 @@ const checkPokedex = () => {
           catched: false,
           types: []
         }))
+        // save user pokedex in local storage
         localStorage.setItem(`pokedex-${userName}`, JSON.stringify(localPokedex))
         setRemainingPokemons()
         return true
@@ -157,7 +159,7 @@ const checkPokedex = () => {
   }
 }
 
-
+// set not catched pokemons list
 const setRemainingPokemons = () => {
   localPokedex.forEach(pokemon => {
     if (!pokemon.catched) {
@@ -218,6 +220,7 @@ const createPokedex = () => {
   getAnswers()
 }
 
+// set image and anwes to play
 const writeGame = answers => {
   // show loader
   playContainer.classList.add('play--loading')
@@ -257,12 +260,25 @@ const playModalError = (error) => {
    modal.textContent = ''
    /* 
    structure
-   <p class="error">${error}</p>
+   <div class="modal">
+     <button class="modal__close modal__close--error">X</button>
+     <p class="modal__error">${error}</p>
+   </div>
    */
+  const fragment = document.createDocumentFragment()
+  const buttonClose = document.createElement('button')
+  buttonClose.classList.add('modal__close')
+  buttonClose.classList.add('modal__close--error')
+  buttonClose.textContent = "X"
+  const modalContainer = document.createElement('div')
+  modalContainer.classList.add('modal')
   const errorText = document.createElement('p')
-  errorText.classList.add('error')
-  errorText.textContent = error
-  modal.appendChild(errorText)
+  errorText.classList.add('modal__error')
+  errorText.textContent = `error: ${error}`
+  modalContainer.appendChild(buttonClose)
+  modalContainer.appendChild(errorText)
+  fragment.appendChild(modalContainer)
+  modal.appendChild(fragment)
   playSection.classList.add('play--modal')
 }
 
@@ -334,11 +350,15 @@ const playModal = (pokemon) => {
 }
 
 modal.addEventListener('click', e => {
-  if (e.target.classList.contains('modal__close')){
+
+  if (e.target.classList.contains('modal__close--error')){
     modal.textContent = ''
     playSection.classList.remove('play--modal')
-  }
-  
+    closePokedex()
+  } else if (e.target.classList.contains('modal__close')){
+    modal.textContent = ''
+    playSection.classList.remove('play--modal')
+  } 
 })
 
 const catchPokemon = () => {
